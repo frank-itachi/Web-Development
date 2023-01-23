@@ -1,0 +1,42 @@
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: hsl(212, 45%, 89%);
+}
+
+.section-content{
+    position: absolute;
+    top: 18%;
+    bottom: 20%;
+}
+
+.qr-card {
+    padding: 1rem;
+    text-align: center;
+    border: 0;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.qr-card, .qr-card img {
+    border-radius: 1rem;
+}
+
+.qr-card .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: .5rem 0 1rem 0;
+    color: hsl(218, 44%, 22%)
+}
+
+.qr-card .card-text {
+    font-size: 15px;
+    color: hsl(220, 15%, 55%)
+}
+
+/* Mobile Design  */
+
+@media (max-width: 375px){
+    .section-content {
+        top: 15%;
+        padding: 0 7%;
+    }
+}
