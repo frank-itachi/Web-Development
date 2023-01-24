@@ -4,9 +4,7 @@ body {
 }
 
 .section-content{
-    position: absolute;
-    top: 18%;
-    bottom: 20%;
+    margin: 10% 0;
 }
 
 .qr-card {
