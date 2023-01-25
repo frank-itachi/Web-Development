@@ -1,9 +1,27 @@
+/* General Styles  */
+
 body {
     font-family: 'Red Hat Display', sans-serif;
     background-color: #E0E8FF;
     background-image: url("../images/pattern-background-desktop.svg");
     background-repeat: no-repeat;
     background-position-y: -4.6rem
+}
+
+.card-title, .plan-description h2 {
+    color: hsl(223, 47%, 23%);
+}
+
+.card-title, .plan-description h2, .main-card-buttons button, .change-link {
+    font-weight: bold;
+}
+
+.main-card .plan-description h2, .main-card .plan-description p {
+    font-size: 1.1rem;
+}
+
+.main-card .plan-description p, .main-card-buttons .cancel-btn, .card-text {
+    color: hsl(224, 23%, 55%);
 }
 
 /* Main Section  */
@@ -27,8 +45,6 @@ body {
 
 .main-card .card-body .card-title {
     font-size: 1.8rem;
-    font-weight: bold;
-    color: hsl(223, 47%, 23%);
     margin-bottom: 1.5rem;
     text-shadow: 1px 1px 1px hsl(224, 23%, 55%);
 }
@@ -43,12 +59,10 @@ body {
 
 .main-card .card-text{
     padding: 0 1rem;
+    font-size: 16px;
 }
 
-.main-card .card-body .card-text {
-    font-size: 16px;
-    color: hsl(224, 23%, 55%);
-}
+/* Card Plan Section  */
 
 .main-card .plans {
     background-color: hsl(225, 100%, 98%);
@@ -61,22 +75,13 @@ body {
 }
 
 .main-card .plan-description h2 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: hsl(223, 47%, 23%);
     margin: 0;
-}
-
-.main-card .plan-description p {
-    font-size: 1.1rem;
-    color: hsl(224, 23%, 55%);
 }
 
 /* Card Buttons Section  */
 
 .main-card-buttons button {
     padding: .7rem;
-    font-weight: bold;
 }
 
 .main-card-buttons .proceed-btn {
@@ -85,6 +90,38 @@ body {
     box-shadow: 0px 15px 34px -19px #312bd9;
 }
 
-.main-card-buttons .cancel-btn {
-    color: hsl(224, 23%, 55%);
+/* Footer Section  */
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Mobile Design Section  */
+
+@media (max-width: 375px){
+
+    body {
+        background-image: url("../images/pattern-background-mobile.svg");
+    }
+
+    #main {
+        padding: 15% 0 15% 6%;
+    }
+
+    .main-card .card-body {
+        padding: 3rem 1rem;       
+    }
+
+    .main-card .card-body .card-title {
+        font-size: 1.5rem;       
+    }
+
+    .main-card .card-body .card-text {
+        font-size: 1rem;
+        padding: 0 1.6rem;
+    }
+
+    .main-card .plan-description p, .main-card .plan-description h2, .change-link {
+        font-size: .9rem;
+    }
+
 }
