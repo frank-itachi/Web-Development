@@ -1,11 +1,22 @@
 body {
     font-family: 'Red Hat Display', sans-serif;
+    background-color: #E0E8FF;
     background-image: url("../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-position-y: -4.6rem
+}
+
+/* Main Section  */
+
+#main {
+    padding-right: 0;
 }
 
 /* Main Card Section  */
 .main-card {
     text-align: center;
+    box-shadow:  0px 50px 108px -90px #312bd9;
+    border-radius: 1.5rem;
 }
 
 .main-card .card-body {
@@ -20,6 +31,12 @@ body {
     color: hsl(223, 47%, 23%);
     margin-bottom: 1.5rem;
     text-shadow: 1px 1px 1px hsl(224, 23%, 55%);
+}
+
+/* Card Image  */
+
+.main-card .card-image {
+    border-radius: 1.5rem 1.5rem 0 0;
 }
 
 /* Card Text  */
@@ -54,6 +71,8 @@ body {
     font-size: 1.1rem;
     color: hsl(224, 23%, 55%);
 }
+
+/* Card Buttons Section  */
 
 .main-card-buttons button {
     padding: .7rem;
