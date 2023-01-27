@@ -51,10 +51,6 @@ p.header {
     border-radius: .5rem 0 0 .5rem;
 }
 
-/* .image-section img {
-    background-image: url("../images/image-product-desktop.jpg");
-} */
-
 .content-section {
     padding-left: 0;
     padding-right: 0;
@@ -114,8 +110,7 @@ p.header {
 @media (max-width: 576px){
     .section-content{
         width: 100%;
-        padding: 5%;
-        box-shadow: 0;
+        padding: 7% 5%;
     }
 
     .image-section {
@@ -138,8 +133,28 @@ p.header {
         padding: 1.7rem 1rem;
     }
 
+    p.header {
+        padding-top: 0.5rem;
+    }
+
     .card-title {
         font-size: 2rem;
         padding-right: 0;
+    }
+
+    .price-section {
+        padding-top: .5rem;
+    }
+
+    .price-section h2 {
+        font-size: 2rem;
+    }
+
+    .main-card-buttons {
+        margin-top: 0.5rem;
+    }
+
+    .price-section p {
+        margin: 0.6rem 5.5rem 0.5rem 0;
     }
 }
