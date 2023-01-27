@@ -1,0 +1,13 @@
+#main .container-fluid {
+    padding-left: 26px;
+    padding-top: 3.7rem;
+}
+
+
+
+@media(min-width:1200px){
+    .main-col {
+        width: 27.2%;
+    }
+
+}
