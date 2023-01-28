@@ -1,13 +1,161 @@
-#main .container-fluid {
-    padding-left: 26px;
-    padding-top: 3.7rem;
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(217, 54%, 11%);
 }
 
+em {
+    font-style: normal;
+}
+
+hr {
+    margin: 0;
+    color: hsl(0, 0%, 100%);
+    opacity: .1;
+}
+
+.card a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+
+.card a:hover{
+    color:hsl(178, 100%, 50%);
+} 
+
+.card, .main-img {
+    position: relative;
+}
+
+.card-title, .attribution {
+    color: hsl(0, 0%, 100%);
+}
+
+/* Main Section  */
+
+#main .container-fluid {
+    padding-left: 7.5%;
+    padding-top: 11%;
+    padding-bottom: 10%;
+}
+
+.main-col {
+    padding: 0 2.2%;
+}
+
+p {
+    font-size: 18px;
+    color: hsl(215, 51%, 70%);
+    font-weight: lighter;
+}
+
+/* Card Section  */
+
+.card {
+    background-color: hsl(216, 50%, 16%);
+    box-shadow: 0px 20px 6px 18px #0c1729;
+}
+
+.img-link {
+    width: 85%;
+    margin: 8% 7% 7% 7%;
+}
+
+.img-link:hover {
+    background-color: hsl(178, 100%, 50%);
+}
+
+.main-img {
+    z-index: 1;
+    width: 100%;
+}
+
+.main-img:hover {
+    opacity: .3;
+}
+
+.icon-view {
+    position: absolute;
+    top: 27%;
+    left: 43%;
+}
+
+.card-body {
+    padding: 0 7.2%;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 4.5%;
+}
+
+.coin-section {
+    padding: 1% 0 0 1%;
+    margin-bottom: 2%;
+}
+
+.coin-section p {
+    font-size: 17px;
+}
+
+.coin-section .coin {
+    font-weight: bold;
+    color:hsl(178, 100%, 50%);
+}
+
+.creator-section {
+    padding: 2% 1%;
+    margin-bottom: 5%;
+    margin-top: 3.5%;
+}
+
+.avatar-img {
+    width: 11%;
+    height: 10%;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 100%;
+}
+
+.creator-section p {
+    margin-left: 4.8%;
+    margin-top: 1.2%;
+    font-size: 16px;  
+}
+
+/* Footer Section  */
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    padding-left: 20%;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
 
 
-@media(min-width:1200px){
-    .main-col {
-        width: 27.2%;
+@media(max-width:375px){
+    #main .container-fluid {
+        padding: 3%;
     }
 
+    .card {
+        box-shadow: none;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .coin-section .coin {
+        font-size: 15px;
+    }
+
+    .creator-section {
+        margin-top: 1.5%;
+    }
+
+    .attribution {
+        padding-left: 0;
+    }
 }
