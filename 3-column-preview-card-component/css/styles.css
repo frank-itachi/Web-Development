@@ -1,0 +1,166 @@
+/* General Styles  */
+body {
+    background-color: hsl(0, 0%, 95%);
+}
+
+p, .card button {
+    font-size: 15px;
+}
+
+p {
+    line-height: 1.7;
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.card-text, .card button {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.card button, .card button:hover {
+    border: 2px solid;
+}
+
+.card button {
+    margin-top: 27%;
+    font-weight: lighter;
+    padding: 6% 14%;
+}
+
+.card button:hover{
+    color: #fff;
+}
+
+
+/* Main Section  */
+
+.main-row {
+    padding: 13% 0 5% 0;
+}
+
+.main-col {
+    margin-left: 7%;
+}
+
+
+/* Cards Sections  */
+
+.card-sedan{
+    background-color: hsl(31, 77%, 52%);
+}
+
+.card-suvs{
+    background-color: hsl(184, 100%, 22%);
+}
+
+.card-lux{
+    background-color: hsl(179, 100%, 13%);
+}
+
+/* card body section  */
+
+.card-body {
+    padding: 16% 15% 15% 16%;
+}
+
+/* card icon  */
+.icon-card {
+    width: 30%;
+}
+
+.card-title {
+    font-family: 'Big Shoulders Display', cursive;
+    margin-top: 16%;
+    color: #fff;
+}
+
+.card-text {
+    margin: 11% 0%;
+}
+
+/* card button section  */
+
+.card-sedan button {
+    color: hsl(31, 77%, 52%);
+}
+
+.card-suvs button {
+    color: hsl(184, 100%, 22%);
+}
+
+.card-lux button {
+    color: hsl(179, 100%, 13%);
+}
+
+/* button hover styles  */
+
+.card-sedan button:hover {
+    background-color: hsl(31, 77%, 52%);
+}
+
+.card-suvs button:hover {
+    background-color: hsl(184, 100%, 22%)
+}
+
+.card-lux button:hover {
+    background-color: hsl(179, 100%, 13%);
+}
+
+/* Footer Section  */
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 992px){
+    .main-col {
+        width: 71.5%;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 991px){
+    .main-col {
+        margin-left: 0;
+    }
+
+}
+
+@media (max-width: 375px){
+    .main-row {
+        padding: 25% 0 5% 0;
+    }
+
+    .main-col {
+        margin-left: 0;
+    }
+
+    .card-group > .card {
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    .card-sedan {
+        border-radius:3% 3% 0 0!important;
+    }
+
+    .card-lux {
+        border-radius: 0 0 3% 3%!important;
+    }
+
+    .card-body {
+        padding: 14% 15% 15% 15%
+    }
+
+    .card-title {
+        margin-top: 15%;
+        font-size: 2.5rem;
+    }
+
+    .card-text {
+        margin: 11% 0% 9% 0%;
+    }
+    
+    .card button {
+        margin-top: 0;
+    }
+}
+
