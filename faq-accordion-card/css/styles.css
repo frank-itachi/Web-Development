@@ -1,0 +1,33 @@
+body {
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+.main-card-col {
+    padding: 0 6% 0 11.5%
+}
+
+.box-img-sec {
+    position: absolute;
+}
+
+.main-img {
+    /* position: absolute;
+    left: -9%;
+    top: -5%;   */
+}
+
+/* ------------------ */
+
+.main-card-row {
+    border: 1px solid;
+}
+.main-card-col {
+    border: 1px solid red;
+}
+
+.body-card-sec, .main-img-sec, .card > .row {
+    border: dotted 1px grey;
+    padding: 0;
+}
