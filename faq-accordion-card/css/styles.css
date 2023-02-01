@@ -3,31 +3,43 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
 }
 
-
-.main-card-col {
-    padding: 0 6% 0 11.5%
+.card {
+    background-color: inherit;
+    border: none;   
 }
 
 .box-img-sec {
+    position: relative;
+    z-index: 1;
+    width: 15.3%;
+    background: linear-gradient(0deg, hsl(240, 73%, 65%) -30%, hsl(273, 75%, 66%) 125%);
+}
+
+.box-img {
     position: absolute;
+    top: 38%;
+    left: 46%;
+}
+
+.main-img-sec {
+    background-color: #fff;
+    position: relative;
 }
 
 .main-img {
-    /* position: absolute;
-    left: -9%;
-    top: -5%;   */
+    position: absolute;
+    left: -15%;
+    top: 3%;
 }
+
+.body-card-sec {
+    background-color: white;
+}
+
 
 /* ------------------ */
 
-.main-card-row {
-    border: 1px solid;
-}
-.main-card-col {
-    border: 1px solid red;
-}
 
 .body-card-sec, .main-img-sec, .card > .row {
-    border: dotted 1px grey;
     padding: 0;
 }
