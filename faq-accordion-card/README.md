@@ -24,7 +24,7 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 ### Links
 
 - [Solution URL](https://github.com/frank-itachi/Web-Development/tree/master/faq-accordion)
-- [Live Site URL](https://frank-itachi.github.io/Web-Development/faq-accordion/)
+- [Live Site URL](https://frank-itachi.github.io/Web-Development/faq-accordion-accordion/)
 
 ## My process
 
