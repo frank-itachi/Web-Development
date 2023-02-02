@@ -4,7 +4,7 @@ body {
 }
 
 #main-section .row {
-    padding: 9% 8% 10.7% 8%;
+    padding: 9.5% 8% 9.5% 8%;
 }
 
 .col {
@@ -26,16 +26,16 @@ body {
     background-repeat: no-repeat;
     background-position-x: 103%;
     background-size: auto;
-    background-position-y: 70%;
+    background-position-y: 68%;
     border-radius: 5% 0% 0% 5%;
-    box-shadow: 47px 39px 25px -21px #5742b9;
+    box-shadow: 47px 44px 25px -5px #5742b9;
 }
 
 .sec-col-3 {
     width: 43.666667%;
     padding: 5.3% 6% 0 5%;
     border-radius: 0% 5% 5% 0%;
-    box-shadow: 3px 39px 25px -21px #5742b9;
+    box-shadow: 10px 50px 25px -15px #5742b9;
 }
 
 .box-img, .main-img {
@@ -48,7 +48,7 @@ body {
 }
 
 .main-img {
-    top: 14%;
+    top: 15%;
     right: 3%;
 }
 
@@ -136,7 +136,7 @@ div.accordion-collapse.collapse.show {
 
 /* Mobile Design  */
 
-@media (max-width:576px){
+@media (max-width:768px){
     .col {
         width: 100%;
     }
@@ -186,4 +186,23 @@ div.accordion-collapse.collapse.show {
     .accordion-button {
         font-size: 13px;
     }
+}
+
+@media (min-width:576px) and (max-width:768px){
+
+    #main-section .row {
+        padding: 0% 15% 10.7% 15%;
+    }
+
+    .sec-col-3 {
+        padding-top: 25%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .main-img {
+        width: 70%;
+        left: 14%;
+    }
+
 }
