@@ -1,0 +1,41 @@
+.main-row {
+    padding: 1.6% 1.7% 1% 3%;
+}
+
+.card-body {
+    padding-top: 13%;
+    padding-left: 13%;
+    padding-right: 15%;
+}
+
+
+.card-title {
+    font-weight: bolder;
+    font-size: 2.3rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.card-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    margin-top: 1.7rem;
+    line-height: 1.6;
+}
+
+
+.col-card-image img{
+    width: 100%;
+}
+
+.card-body-row {
+    margin-top: 4rem;
+}
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
