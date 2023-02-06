@@ -16,7 +16,7 @@ h2 {
 /* # --------- # */
 
 .main-row {
-    padding: 3.99% 2.99% 5% 3%;
+    padding: 4.99% 2.9% 5% 3%;
 }
 
 .main-card {
@@ -33,9 +33,9 @@ h2 {
 
 .card-title {
     font-family: 'Inter', sans-serif;
-    margin: 4.6% 0%;
-    font-size: 2.3rem;
-    letter-spacing: -1.4px;
+    margin: 4.2% 0%;
+    font-size: 2.39rem;
+    letter-spacing: -1.3px;
     font-weight: bold;
     line-height: 1.1;
 }
@@ -48,9 +48,8 @@ h2 {
     font-family: 'Inter', sans-serif;
     padding-right: 19%;
     font-size: 15px;
-    margin-top: 5.99%;
-    line-height: 1.55;
-    letter-spacing: -.3px;
+    margin-top: 6.5%;
+    line-height: 1.65;
     color: hsla(0, 0%, 100%, 0.75);
 }
 
@@ -66,15 +65,15 @@ h2 {
 }
 
 .card-body-row {
-    margin-top: 16.5%;
+    margin-top: 16.6%;
 }
 
 .card-body-row div:nth-child(2){
-    padding-left: 7%;
+    padding-left: 8%;
 }
 
 .card-body-row div:nth-child(3){
-    padding-left: 5.7%;
+    padding-left: 6%;
 }
 
 .card-body-row p{
@@ -109,7 +108,7 @@ h2 {
     }
 
     .col-card-content {
-        margin-top: 70%;
+        margin-top: 65.44%;
     }
 
     .card-body {
@@ -154,7 +153,8 @@ h2 {
 
 }
 
-@media (min-width:576px) and (max-width:768px){
+
+@media (min-width:576px) and (max-width:991px){
     .main-container {
         padding: 15%;
     }
