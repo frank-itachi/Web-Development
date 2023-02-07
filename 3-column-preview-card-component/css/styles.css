@@ -21,9 +21,9 @@ p {
 }
 
 .card button {
-    margin-top: 27%;
     font-weight: lighter;
-    padding: 6% 14%;
+    margin-top: 25.5%;
+    padding: 6% 14.5%;
 }
 
 .card button:hover{
@@ -34,11 +34,11 @@ p {
 /* Main Section  */
 
 .main-row {
-    padding: 13% 0 5% 0;
+    padding: 8% 0 5% 0;
 }
 
 .main-col {
-    margin-left: 7%;
+    margin-left: 0%;
 }
 
 
@@ -59,7 +59,7 @@ p {
 /* card body section  */
 
 .card-body {
-    padding: 16% 15% 15% 16%;
+    padding: 15%;
 }
 
 /* card icon  */
@@ -69,8 +69,9 @@ p {
 
 .card-title {
     font-family: 'Big Shoulders Display', cursive;
-    margin-top: 16%;
+    font-size: 2.5rem;
     color: #fff;
+    margin-top: 16.99%;
 }
 
 .card-text {
@@ -112,7 +113,7 @@ p {
 
 @media (min-width: 992px){
     .main-col {
-        width: 71.5%;
+        width: 66.75%;
     }
 
 }
