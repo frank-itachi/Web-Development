@@ -1,0 +1,87 @@
+$colors:(white: hsl(0, 0%, 100%), lightGray: hsl(212, 45%, 89%), grayish-blue: hsl(220, 15%, 55%), dark-blue: hsl(218, 44%, 22%))
+$tablet-vp: 576px
+$laptop-vp: 768px
+$desktop-vp: 992px
+
+@function get-color($color_name)
+    @return map-get($colors, $color_name)
+
+@mixin tablet()
+    @media (min-width: $tablet-vp)
+        @content
+
+@mixin laptop()
+    @media (min-width: $laptop-vp)
+        @content
+
+@mixin desktop()
+    @media (min-width: $desktop-vp)
+        @content
+
+body 
+    margin: 0
+    font-family: "Outfit", sans-serif
+    
+    main
+        background-color: get-color(lightGrey)
+        min-height: 100vh
+        display: grid
+        grid-template-rows: auto auto
+        grid-template-areas: "main-content" "footer"
+
+        #main-content 
+            grid-area: main-content
+            align-self: end 
+            justify-self: center
+            padding-top: 22%
+            width: 85%
+
+            @include tablet()
+                width: 60%
+
+            @include laptop()
+                width: 45%
+
+            @include desktop()
+                align-self: center
+
+            #main-card
+                background-color: get-color(white)
+                border: none
+                border-radius: 20px
+                padding: 5.9% 4.5% 7% 5%
+                text-align: center
+                
+                img
+                    border-radius: 10px
+
+                .card-body 
+                    padding-left: 2%
+
+                .card-title
+                    font-weight: bold
+                    font-size: 1.39rem
+                    line-height: 1.26
+                    margin-left: 3%
+                    margin-top: 3%
+            
+                .card-text 
+                    font-size: 15px
+                    margin-top: 5.8%
+                    line-height: 1.29
+                    letter-spacing: .2px
+                    margin-left: 3%
+        
+        footer 
+            grid-area: footer
+            align-self: start
+            padding: 5%
+
+            @include desktop()
+                padding: 2%
+
+            .attribution 
+                font-size: 11px
+                text-align: center
+                a 
+                    color: hsl(228, 45%, 44%)

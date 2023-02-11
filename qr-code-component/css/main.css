@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+body main {
+  background-color: hsl(212deg, 45%, 89%);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas: "main-content" "footer";
+}
+body main #main-content {
+  grid-area: main-content;
+  align-self: end;
+  justify-self: center;
+  padding-top: 22%;
+  width: 85%;
+}
+@media (min-width: 576px) {
+  body main #main-content {
+    width: 60%;
+  }
+}
+@media (min-width: 768px) {
+  body main #main-content {
+    width: 45%;
+  }
+}
+@media (min-width: 992px) {
+  body main #main-content {
+    align-self: center;
+  }
+}
+body main #main-content #main-card {
+  background-color: hsl(0deg, 0%, 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 5.9% 4.5% 7% 5%;
+  text-align: center;
+}
+body main #main-content #main-card img {
+  border-radius: 10px;
+}
+body main #main-content #main-card .card-body {
+  padding-left: 2%;
+}
+body main #main-content #main-card .card-title {
+  font-weight: bold;
+  font-size: 1.39rem;
+  line-height: 1.26;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+body main #main-content #main-card .card-text {
+  font-size: 15px;
+  margin-top: 5.8%;
+  line-height: 1.29;
+  letter-spacing: 0.2px;
+  margin-left: 3%;
+}
+body main footer {
+  grid-area: footer;
+  align-self: start;
+  padding: 5%;
+}
+@media (min-width: 992px) {
+  body main footer {
+    padding: 2%;
+  }
+}
+body main footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+body main footer .attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */
