@@ -1,0 +1,91 @@
+$colors: (bg-body: hsl(30, 38%, 92%), green: #458C6B, grey: hsl(228, 12%, 48%), white: hsl(0, 0%, 100%))
+
+@function get-color($color_name)
+    @return map-get($colors, $color_name)
+    
+body
+
+    h1, h2 
+        font-family: 'Fraunces', serif
+        margin: 0
+
+    p
+        color: get-color(grey)
+
+    .add-btn, p
+        font-family: 'Montserrat', sans-serif
+        font-size: 14px
+
+    main
+        background-color: get-color(bg-body)
+        display: grid
+        grid-template-rows: auto 10%
+        grid-template-areas: "main-section" "footer"
+        min-height: 100vh
+        padding-top: 7%
+        
+        #main-section
+            grid-area: main-section
+            align-self: center
+            justify-self: center
+            width: 92%
+
+            #main-card
+                background-color: get-color(white)
+                border-radius: 15px
+                display: grid
+                grid-template-rows: auto auto
+                grid-template-areas: "card-image" "card-content"
+            
+            .c-img 
+                grid-area: card-image
+
+                img 
+                    border-radius: 15px 15px 0 0 
+                    width: 100%
+            
+            .c-content
+                grid-area: card-content
+                padding: 6.5% 7.5% 6.7% 7.44%
+                
+                p.header 
+                    text-transform: uppercase
+                    margin-bottom: 0
+                    letter-spacing: 3.5px
+                
+                .c-title
+                    font-size: 2rem
+                    margin-top: 3.5%
+                    line-height: .99
+
+                .c-text 
+                    margin-top: 5.5%
+                    line-height: 1.59
+                    margin-bottom: 1.5rem
+
+                .price-section 
+                    margin-bottom: 5%
+
+                    h2
+                        font-size: 2rem
+                        color: get-color(green)
+
+                    p 
+                        margin: 3% 0 0 6.6%
+                        text-decoration: line-through
+
+                .c-buttons .add-btn
+                    background-color: get-color(green)
+                    font-weight: bold
+                    color: #fff
+                    padding: 0.8rem 1rem
+
+        footer 
+            grid-area: footer
+            padding: 5% 1%
+
+            .attribution 
+                font-size: 11px
+                text-align: center
+                a 
+                    color: hsl(228, 45%, 44%)
