@@ -9,6 +9,11 @@ body main {
   grid-template-rows: auto auto;
   grid-template-areas: "main-content" "footer";
 }
+@media (min-width: 992px) {
+  body main {
+    grid-template-rows: auto 0.1fr;
+  }
+}
 body main #main-content {
   grid-area: main-content;
   align-self: end;
@@ -29,14 +34,24 @@ body main #main-content {
 @media (min-width: 992px) {
   body main #main-content {
     align-self: center;
+    justify-self: center;
+    padding-top: 0;
+    margin-top: 5.4%;
+    width: 22.3%;
   }
 }
 body main #main-content #main-card {
   background-color: hsl(0deg, 0%, 100%);
   border: none;
   border-radius: 20px;
+  box-shadow: 0px 38px 66px -38px hsl(220deg, 15%, 55%);
   padding: 5.9% 4.5% 7% 5%;
   text-align: center;
+}
+@media (min-width: 992px) {
+  body main #main-content #main-card {
+    padding: 4.4% 5% 7% 5%;
+  }
 }
 body main #main-content #main-card img {
   border-radius: 10px;
@@ -45,6 +60,7 @@ body main #main-content #main-card .card-body {
   padding-left: 2%;
 }
 body main #main-content #main-card .card-title {
+  color: hsl(218deg, 44%, 22%);
   font-weight: bold;
   font-size: 1.39rem;
   line-height: 1.26;
@@ -52,6 +68,7 @@ body main #main-content #main-card .card-title {
   margin-top: 3%;
 }
 body main #main-content #main-card .card-text {
+  color: hsl(220deg, 15%, 55%);
   font-size: 15px;
   margin-top: 5.8%;
   line-height: 1.29;
