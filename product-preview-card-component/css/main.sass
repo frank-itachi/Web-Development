@@ -1,8 +1,25 @@
 $colors: (bg-body: hsl(30, 38%, 92%), green: #458C6B, grey: hsl(228, 12%, 48%), white: hsl(0, 0%, 100%))
+// Break points 
+$sm: 576px
+$md: 768px
+$lg: 992px
 
 @function get-color($color_name)
     @return map-get($colors, $color_name)
+
+@mixin sm-vp()
+    @media (min-width: $sm)
+        @content
     
+
+@mixin md-vp()
+    @media (min-width: $md)
+        @content
+
+@mixin lg-vp()
+    @media (min-width: $lg)
+        @content
+
 body
 
     h1, h2 
@@ -19,10 +36,13 @@ body
     main
         background-color: get-color(bg-body)
         display: grid
-        grid-template-rows: auto 10%
+        grid-template-rows: auto .1fr
         grid-template-areas: "main-section" "footer"
         min-height: 100vh
         padding-top: 7%
+
+        @include lg-vp()
+            grid-template-rows: .98fr 0.1fr
         
         #main-section
             grid-area: main-section
@@ -30,12 +50,30 @@ body
             justify-self: center
             width: 92%
 
+            @include sm-vp()
+                width: 75%
+
+            @include md-vp()
+                width: 90%
+
+            @include lg-vp()
+                width: 41.8%
+                align-self: end
+
             #main-card
                 background-color: get-color(white)
                 border-radius: 15px
                 display: grid
                 grid-template-rows: auto auto
                 grid-template-areas: "card-image" "card-content"
+                
+                @include md-vp()
+                    grid-template-rows: auto
+                    grid-template-columns: auto auto
+                    grid-template-areas: "card-image card-content"
+
+                @include lg-vp()
+                    grid-template-columns: 1fr 1fr
             
             .c-img 
                 grid-area: card-image
@@ -43,10 +81,19 @@ body
                 img 
                     border-radius: 15px 15px 0 0 
                     width: 100%
+
+                    @include md-vp()
+                        border-radius: 15px 0 0 15px
             
             .c-content
                 grid-area: card-content
                 padding: 6.5% 7.5% 6.7% 7.44%
+
+                @include sm-vp()
+                    padding: 10%
+
+                @include lg-vp()
+                    padding: 11.5% 10% 10% 10%
                 
                 p.header 
                     text-transform: uppercase
@@ -58,6 +105,9 @@ body
                     margin-top: 3.5%
                     line-height: .99
 
+                    @include lg-vp()
+                        margin-top: 5.9%
+
                 .c-text 
                     margin-top: 5.5%
                     line-height: 1.59
@@ -66,6 +116,9 @@ body
                 .price-section 
                     margin-bottom: 5%
 
+                    @include lg-vp()
+                        margin-bottom: 10%
+
                     h2
                         font-size: 2rem
                         color: get-color(green)
@@ -73,6 +126,13 @@ body
                     p 
                         margin: 3% 0 0 6.6%
                         text-decoration: line-through
+                        
+                        @include sm-vp()
+                            margin: 2.5% 0 0 auto
+
+                        @include lg-vp()
+                            margin: 0
+                            padding: 4% 0% 0 7%
 
                 .c-buttons .add-btn
                     background-color: get-color(green)
