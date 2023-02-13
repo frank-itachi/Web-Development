@@ -11,47 +11,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <!-- Custom CSS StyleSheet  -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <title>Frontend Mentor | Product preview card component</title>
+    <title>Frontend Mentor | Product preview card component</title> 
 </head>
 <body>
-    <section id="main" class="container-fluid min-vh-100 d-flex align-items-center justify-content-center">
-        <div class="row  justify-content-center section-content shadow">
-            <div class="col-12 col-sm-12 col-md-9 col-lg-7 col-xl-5">
-                <div class="card border-light">
-                    <div class="row">
-                      <div class="col-12 col-sm-6 image-section"></div>
-                      <div class="col-12 col-sm-6 content-section">
-                        <div class="card-body">
-                            <p class="header">PERFUME</p>
-                          <h1 class="card-title">Gabrielle Essence Eau De Parfum</h1>
-                          <p class="card-text">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-                            Perfumer-Creator for the House of CHANEL.</p>
-                            <div class="d-flex justify-content-start price-section">
-                                <h2>$149.99</h2>
-                                <p class="text-decoration-line-through ms-auto">$169.99</p>
-                            </div>
-                            <div class="d-grid gap-4 main-card-buttons">
-                            <button class="btn btn-lg add-btn">
-                              <img class="cart-icon" src="./images/icon-cart.svg" alt="">
-                              Add to Cart
-                            </button>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
+    <main>
+        <section id="main-section">
+            <article id="main-card">
+                <div class="c-img">
+                    <picture>
+                        <source srcset="./images/image-product-mobile.jpg" media="(max-width: 768px)">
+                        <img src="./images/image-product-desktop.jpg" alt=" Image Product Preview">
+                    </picture>
                 </div>
+                <div class="c-content">
+                    <p class="header">perfume</p>
+                    <h1 class="c-title">Gabrielle Essence Eau De Parfum</h1>
+                    <p class="c-text">
+                            A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+                            Perfumer-Creator for the House of CHANEL.
+                    </p>
+                    <div class="d-flex justify-content-start price-section">
+                        <h2>$149.99</h2>
+                        <p>$169.99</p>
+                    </div>
+                    <div class="d-grid gap-4 c-buttons">
+                    <button class="btn btn-lg add-btn">
+                        <img class="cart-icon" src="./images/icon-cart.svg" alt="">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+        </section>
+        <footer>
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                Coded by <a href="https://github.com/frank-itachi">Francisco Carrillo</a>.
             </div>
-        </div>
-        
-    </section>
-    <footer>
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-            Coded by <a href="#">Francisco Carrillo</a>.
-          </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        </footer>
+    </main>
 </body>
 </html>

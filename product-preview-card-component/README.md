@@ -17,8 +17,8 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### Screenshot
 
-![](./images/screenshot1.JPG)
-![](./images/screenshot2.JPG)
+![](./images/screenshot1.PNG)
+![](./images/screenshot2.PNG)
 
 
 ### Links

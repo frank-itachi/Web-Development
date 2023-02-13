@@ -1,0 +1,155 @@
+body h1, body h2 {
+  font-family: "Fraunces", serif;
+  margin: 0;
+}
+body p {
+  color: hsl(228deg, 12%, 48%);
+}
+body .add-btn, body p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+body main {
+  background-color: hsl(30deg, 38%, 92%);
+  display: grid;
+  grid-template-rows: auto 0.1fr;
+  grid-template-areas: "main-section" "footer";
+  min-height: 100vh;
+  padding-top: 7%;
+}
+@media (min-width: 992px) {
+  body main {
+    grid-template-rows: 0.98fr 0.1fr;
+  }
+}
+body main #main-section {
+  grid-area: main-section;
+  align-self: center;
+  justify-self: center;
+  width: 92%;
+}
+@media (min-width: 576px) {
+  body main #main-section {
+    width: 75%;
+  }
+}
+@media (min-width: 768px) {
+  body main #main-section {
+    width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  body main #main-section {
+    width: 41.8%;
+    align-self: end;
+  }
+}
+body main #main-section #main-card {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas: "card-image" "card-content";
+}
+@media (min-width: 768px) {
+  body main #main-section #main-card {
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-template-areas: "card-image card-content";
+  }
+}
+@media (min-width: 992px) {
+  body main #main-section #main-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+body main #main-section .c-img {
+  grid-area: card-image;
+}
+body main #main-section .c-img img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  body main #main-section .c-img img {
+    border-radius: 15px 0 0 15px;
+  }
+}
+body main #main-section .c-content {
+  grid-area: card-content;
+  padding: 6.5% 7.5% 6.7% 7.44%;
+}
+@media (min-width: 576px) {
+  body main #main-section .c-content {
+    padding: 10%;
+  }
+}
+@media (min-width: 992px) {
+  body main #main-section .c-content {
+    padding: 11.5% 10% 10% 10%;
+  }
+}
+body main #main-section .c-content p.header {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: 3.5px;
+}
+body main #main-section .c-content .c-title {
+  font-size: 2rem;
+  margin-top: 3.5%;
+  line-height: 0.99;
+}
+@media (min-width: 992px) {
+  body main #main-section .c-content .c-title {
+    margin-top: 5.9%;
+  }
+}
+body main #main-section .c-content .c-text {
+  margin-top: 5.5%;
+  line-height: 1.59;
+  margin-bottom: 1.5rem;
+}
+body main #main-section .c-content .price-section {
+  margin-bottom: 5%;
+}
+@media (min-width: 992px) {
+  body main #main-section .c-content .price-section {
+    margin-bottom: 10%;
+  }
+}
+body main #main-section .c-content .price-section h2 {
+  font-size: 2rem;
+  color: #458C6B;
+}
+body main #main-section .c-content .price-section p {
+  margin: 3% 0 0 6.6%;
+  text-decoration: line-through;
+}
+@media (min-width: 576px) {
+  body main #main-section .c-content .price-section p {
+    margin: 2.5% 0 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  body main #main-section .c-content .price-section p {
+    margin: 0;
+    padding: 4% 0% 0 7%;
+  }
+}
+body main #main-section .c-content .c-buttons .add-btn {
+  background-color: #458C6B;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.8rem 1rem;
+}
+body main footer {
+  grid-area: footer;
+  padding: 5% 1%;
+}
+body main footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+body main footer .attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */
