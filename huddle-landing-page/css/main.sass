@@ -1,0 +1,216 @@
+$colors: (violet: hsl(257, 40%, 49%), soft-magenta: hsl(300, 69%, 71%))
+    
+@mixin sm-vp()
+    @media (min-width: 576px)
+        @content
+
+@mixin md-vp()
+    @media (min-width: 768px)
+        @content
+
+@mixin lg-vp()
+    @media (min-width: 992px)
+        @content
+
+@mixin xl-vp()
+    @media (min-width: 1200px)
+        @content
+    
+    
+*
+    margin: 0
+    padding: 0
+
+body 
+    background-color: map-get($colors, violet)
+
+#main-container 
+    background-image: url('../images/bg-mobile.svg')
+    background-position: top
+    background-repeat: no-repeat
+    background-size: contain
+    display: grid
+    grid-template-columns: 81% 
+    grid-template-rows: 10% auto 10%
+    grid-template-areas: "header" "main" "footer"
+    justify-content: center
+    row-gap: 6%
+    min-height: 100vh
+
+    @include sm-vp()
+        grid-template-columns: 65%
+
+    @include md-vp()
+        grid-template-columns: 85%
+        background-image: url('../images/bg-mobile.svg')
+        background-size: cover
+
+    @include lg-vp()
+        grid-template-rows: 10% auto 5%
+
+    @include xl-vp()
+        background-image: url('../images/bg-desktop.svg')
+        background-size: contain
+        grid-template-columns: 90%
+        grid-template-rows: 13% auto 10%
+        row-gap: 0
+        
+
+header
+    grid-area: header
+    display: flex
+    align-items: center
+
+    @include xl-vp()
+        align-items: end
+
+    img
+        width: 41%
+        
+        @include md-vp()
+            width: 25%
+
+        @include lg-vp()
+            width: 20%
+
+        @include xl-vp()
+            width: 16.4%
+
+#main-container main
+    display: grid
+    grid-area: main
+    grid-template-columns: auto 
+    grid-template-rows: auto auto
+    grid-template-areas: "img-sec" "content-sec"
+    row-gap: 10%
+
+    @include sm-vp()
+        row-gap: 3%
+
+    @include md-vp()
+        grid-template-columns: 60% auto  
+        grid-template-rows: auto
+        grid-template-areas: "img-sec content-sec"
+        align-items: center
+        column-gap: 3%
+    
+    @include xl-vp()
+        grid-template-columns: 1.3fr 1fr
+
+    section 
+        text-align: center
+
+    #img-sec 
+        grid-area: img-sec
+
+        @include xl-vp()
+            align-self: end
+            margin-bottom: 1.2rem
+        
+        img 
+            width: 100%
+
+    #content-sec 
+        grid-area: content-sec
+
+        @include md-vp()
+            text-align: left
+
+        @include xl-vp()
+            align-self: start
+            padding: 1rem 0.8rem
+            margin-top: 5.7rem
+
+        h1
+            color: #fff
+            font-family: 'Poppins', sans-serif
+            font-weight: bold
+            font-size: 1.5rem
+            margin-top: 5%
+            line-height: 1.4
+
+            @include xl-vp()
+                font-size: 2.45rem
+                line-height: 1.46
+
+        p
+            font-family: 'Open Sans', sans-serif
+            color: #fff
+            margin-top: 6%
+
+            @include md-vp()
+                margin-top: 2%
+                font-size: 14px
+
+            @include xl-vp()
+                font-size: 18px
+                margin-top: 4%
+                letter-spacing: -.1px
+
+        a
+            font-size: 14px
+            color: map-get($colors, violet)
+            margin-top: 2%
+            margin-bottom: 18%
+            padding: 2.88% 25%
+            box-shadow: 0px 11px 11px -3px darken(map-get($colors, violet), 10)
+
+            @include sm-vp()
+                margin-top: 10%
+                padding: 2.88% 19%
+
+            @include md-vp()
+                margin: 0
+
+            @include xl-vp()
+                margin-top: 1.5%
+                padding: 2.3% 12.4%
+                font-size: 19px
+
+        a:hover 
+            background-color: map-get($colors, soft-magenta)
+            color: #fff
+
+footer
+    grid-area: footer
+    display: flex
+    align-items: center
+    justify-content: center
+
+    @include lg-vp()
+        justify-content: end
+        align-items: start
+
+    i 
+        color: #fff
+    
+    a
+        padding: 0.1rem 0.3rem
+        border: 1px solid #fff
+        border-radius: 100%
+
+        @include xl-vp()
+            margin-right: 0.7rem!important
+
+    a:hover
+        border: 1px solid map-get($colors, soft-magenta)
+        color: map-get($colors, soft-magenta)
+
+
+    a:nth-child(1)
+        padding: 0.1rem 0.5rem
+
+        @include xl-vp()
+            padding: 0.5rem 0.9rem
+    
+    a:nth-child(2)
+        margin: 0 2%
+
+        @include xl-vp()
+            margin: 0
+            padding: 0.5rem 0.6rem
+
+    a:nth-child(3)
+        @include xl-vp()
+            padding: 0.5rem 0.7rem
+        
