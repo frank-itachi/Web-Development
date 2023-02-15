@@ -21,10 +21,9 @@ $colors: (violet: hsl(257, 40%, 49%), soft-magenta: hsl(300, 69%, 71%))
     margin: 0
     padding: 0
 
-body 
-    background-color: map-get($colors, violet)
 
-#main-container 
+body
+    background-color: map-get($colors, violet)
     background-image: url('../images/bg-mobile.svg')
     background-position: top
     background-repeat: no-repeat
@@ -76,7 +75,7 @@ header
         @include xl-vp()
             width: 16.4%
 
-#main-container main
+main
     display: grid
     grid-area: main
     grid-template-columns: auto 
@@ -191,6 +190,9 @@ footer
 
         @include xl-vp()
             margin-right: 0.7rem!important
+        
+        span 
+            display: none
 
     a:hover
         border: 1px solid map-get($colors, soft-magenta)

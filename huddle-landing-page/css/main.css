@@ -5,9 +5,6 @@
 
 body {
   background-color: hsl(257deg, 40%, 49%);
-}
-
-#main-container {
   background-image: url("../images/bg-mobile.svg");
   background-position: top;
   background-repeat: no-repeat;
@@ -21,24 +18,24 @@ body {
   min-height: 100vh;
 }
 @media (min-width: 576px) {
-  #main-container {
+  body {
     grid-template-columns: 65%;
   }
 }
 @media (min-width: 768px) {
-  #main-container {
+  body {
     grid-template-columns: 85%;
     background-image: url("../images/bg-mobile.svg");
     background-size: cover;
   }
 }
 @media (min-width: 992px) {
-  #main-container {
+  body {
     grid-template-rows: 10% auto 5%;
   }
 }
 @media (min-width: 1200px) {
-  #main-container {
+  body {
     background-image: url("../images/bg-desktop.svg");
     background-size: contain;
     grid-template-columns: 90%;
@@ -76,7 +73,7 @@ header img {
   }
 }
 
-#main-container main {
+main {
   display: grid;
   grid-area: main;
   grid-template-columns: auto;
@@ -85,12 +82,12 @@ header img {
   row-gap: 10%;
 }
 @media (min-width: 576px) {
-  #main-container main {
+  main {
     row-gap: 3%;
   }
 }
 @media (min-width: 768px) {
-  #main-container main {
+  main {
     grid-template-columns: 60% auto;
     grid-template-rows: auto;
     grid-template-areas: "img-sec content-sec";
@@ -100,41 +97,41 @@ header img {
   }
 }
 @media (min-width: 1200px) {
-  #main-container main {
+  main {
     grid-template-columns: 1.3fr 1fr;
   }
 }
-#main-container main section {
+main section {
   text-align: center;
 }
-#main-container main #img-sec {
+main #img-sec {
   grid-area: img-sec;
 }
 @media (min-width: 1200px) {
-  #main-container main #img-sec {
+  main #img-sec {
     align-self: end;
     margin-bottom: 1.2rem;
   }
 }
-#main-container main #img-sec img {
+main #img-sec img {
   width: 100%;
 }
-#main-container main #content-sec {
+main #content-sec {
   grid-area: content-sec;
 }
 @media (min-width: 768px) {
-  #main-container main #content-sec {
+  main #content-sec {
     text-align: left;
   }
 }
 @media (min-width: 1200px) {
-  #main-container main #content-sec {
+  main #content-sec {
     align-self: start;
     padding: 1rem 0.8rem;
     margin-top: 5.7rem;
   }
 }
-#main-container main #content-sec h1 {
+main #content-sec h1 {
   color: #fff;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -143,30 +140,30 @@ header img {
   line-height: 1.4;
 }
 @media (min-width: 1200px) {
-  #main-container main #content-sec h1 {
+  main #content-sec h1 {
     font-size: 2.45rem;
     line-height: 1.46;
   }
 }
-#main-container main #content-sec p {
+main #content-sec p {
   font-family: "Open Sans", sans-serif;
   color: #fff;
   margin-top: 6%;
 }
 @media (min-width: 768px) {
-  #main-container main #content-sec p {
+  main #content-sec p {
     margin-top: 2%;
     font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
-  #main-container main #content-sec p {
+  main #content-sec p {
     font-size: 18px;
     margin-top: 4%;
     letter-spacing: -0.1px;
   }
 }
-#main-container main #content-sec a {
+main #content-sec a {
   font-size: 14px;
   color: hsl(257deg, 40%, 49%);
   margin-top: 2%;
@@ -175,24 +172,24 @@ header img {
   box-shadow: 0px 11px 11px -3px #523c8b;
 }
 @media (min-width: 576px) {
-  #main-container main #content-sec a {
+  main #content-sec a {
     margin-top: 10%;
     padding: 2.88% 19%;
   }
 }
 @media (min-width: 768px) {
-  #main-container main #content-sec a {
+  main #content-sec a {
     margin: 0;
   }
 }
 @media (min-width: 1200px) {
-  #main-container main #content-sec a {
+  main #content-sec a {
     margin-top: 1.5%;
     padding: 2.3% 12.4%;
     font-size: 19px;
   }
 }
-#main-container main #content-sec a:hover {
+main #content-sec a:hover {
   background-color: hsl(300deg, 69%, 71%);
   color: #fff;
 }
@@ -221,6 +218,9 @@ footer a {
   footer a {
     margin-right: 0.7rem !important;
   }
+}
+footer a span {
+  display: none;
 }
 footer a:hover {
   border: 1px solid hsl(300deg, 69%, 71%);
