@@ -55,7 +55,7 @@ header h2, ._card_title
     
     
 
-.main-wrapper 
+body 
     min-height: 100vh
     display: grid
     grid-template-columns: 83%
@@ -64,19 +64,44 @@ header h2, ._card_title
     justify-content: center
     gap: 4.6rem
 
+    @include sm-vp()
+        grid-template-columns: 65%
+
+    @include md-vp()
+        grid-template-columns: 90%
+
+    @include lg-vp()
+        grid-template-columns: 77.2%
+        gap: 3.7rem
+
     header 
+        display: flex
         grid-area: header
         padding: 5.2rem 0 0 0.4rem
 
+        @include md-vp()
+            text-align: center
+            justify-content: center
+            
+            .container 
+                width: 50%
+        
+        @include lg-vp()
+            padding: 4.9rem 0 0 0
+
+            .container h1, .container h2
+                font-size: 2.3rem
+                margin-left: 1rem
+
         h1 
-                font-size: 1.53rem
-                font-weight: lighter
+            font-size: 1.53rem
+            font-weight: 200
         h2
             font-size: 1.53rem
 
         p
             margin-top: 1rem
-            font-size: 15px
+            font-size: .94rem
             letter-spacing: .1px
             line-height: 1.65
 
@@ -86,38 +111,66 @@ header h2, ._card_title
         grid-template-columns: auto
         grid-template-rows: auto auto auto auto 
         grid-template-areas: "card-1" "card-2" "card-3" "card-4"
+        gap: 1.7rem
 
         @include md-vp()
-            grid-template-columns: auto auto auto 
-            grid-template-rows: auto auto
+            gap: 1rem
+            grid-template-columns: repeat(3, 1fr) 
+            grid-template-rows: repeat(2, 1fr)
             grid-template-areas: "card-1 card-2 card-4" "card-1 card-3 card-4"
+            row-gap: 2.9rem
+            column-gap: 1.9rem
 
         ._card
-            padding: 7.55% 7% 7% 8.9%
+            padding: 7.55% 8.5% 7.5% 8.9%
+            background: #fff
+            box-shadow: 0px 20px 61px -26px var(--grayish-blue)
+            border-radius: .5em
 
             ._card_title
                 font-size: 1.26rem
 
             ._card_text
-                font-size: 13.4px
+                font-size: .84rem
                 margin-top: 0.4rem
 
             &:nth-child(1)
                 @include card-style(var(--cyan), card-1)
-                // grid-area: card-1
+                
+                @include md-vp()
+                    align-self: center
+            
 
             &:nth-child(2)
                 @include card-style(var(--red), card-2)
-                // grid-area: card-2
+            
 
             &:nth-child(3)
                 @include card-style(var(--orange), card-3)
-                // grid-area: card-3
+            
 
             &:nth-child(4)
                 @include card-style(var(--blue), card-4)
-                // grid-area: card-4
+
+                @include md-vp()
+                    align-self: center
+
+            ._card_img
+                display: flex
+                justify-content: end
+                margin-top: 2.1rem
+
+                img
+                    width: 23.5%
+
                 
 
     footer 
         grid-area: footer
+
+        .attribution 
+            font-size: 11px
+            text-align: center
+
+            a
+                color: hsl(228, 45%, 44%)

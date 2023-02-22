@@ -31,7 +31,7 @@ header h2, ._card_title {
   color: var(--dark-blue);
 }
 
-.main-wrapper {
+body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 83%;
@@ -40,63 +40,131 @@ header h2, ._card_title {
   justify-content: center;
   gap: 4.6rem;
 }
-.main-wrapper header {
+@media (min-width: 576px) {
+  body {
+    grid-template-columns: 65%;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 90%;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    grid-template-columns: 77.2%;
+    gap: 3.7rem;
+  }
+}
+body header {
+  display: flex;
   grid-area: header;
   padding: 5.2rem 0 0 0.4rem;
 }
-.main-wrapper header h1 {
-  font-size: 1.53rem;
-  font-weight: lighter;
+@media (min-width: 768px) {
+  body header {
+    text-align: center;
+    justify-content: center;
+  }
+  body header .container {
+    width: 50%;
+  }
 }
-.main-wrapper header h2 {
+@media (min-width: 992px) {
+  body header {
+    padding: 4.9rem 0 0 0;
+  }
+  body header .container h1, body header .container h2 {
+    font-size: 2.3rem;
+    margin-left: 1rem;
+  }
+}
+body header h1 {
+  font-size: 1.53rem;
+  font-weight: 200;
+}
+body header h2 {
   font-size: 1.53rem;
 }
-.main-wrapper header p {
+body header p {
   margin-top: 1rem;
-  font-size: 15px;
+  font-size: 0.94rem;
   letter-spacing: 0.1px;
   line-height: 1.65;
 }
-.main-wrapper main {
+body main {
   grid-area: main;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto auto;
   grid-template-areas: "card-1" "card-2" "card-3" "card-4";
+  gap: 1.7rem;
 }
 @media (min-width: 768px) {
-  .main-wrapper main {
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
+  body main {
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas: "card-1 card-2 card-4" "card-1 card-3 card-4";
+    row-gap: 2.9rem;
+    -moz-column-gap: 1.9rem;
+         column-gap: 1.9rem;
   }
 }
-.main-wrapper main ._card {
-  padding: 7.55% 7% 7% 8.9%;
+body main ._card {
+  padding: 7.55% 8.5% 7.5% 8.9%;
+  background: #fff;
+  box-shadow: 0px 20px 61px -26px var(--grayish-blue);
+  border-radius: 0.5em;
 }
-.main-wrapper main ._card ._card_title {
+body main ._card ._card_title {
   font-size: 1.26rem;
 }
-.main-wrapper main ._card ._card_text {
-  font-size: 13.4px;
+body main ._card ._card_text {
+  font-size: 0.84rem;
   margin-top: 0.4rem;
 }
-.main-wrapper main ._card:nth-child(1) {
+body main ._card:nth-child(1) {
   grid-area: card-1;
   border-top: solid 3px var(--cyan);
 }
-.main-wrapper main ._card:nth-child(2) {
+@media (min-width: 768px) {
+  body main ._card:nth-child(1) {
+    align-self: center;
+  }
+}
+body main ._card:nth-child(2) {
   grid-area: card-2;
   border-top: solid 3px var(--red);
 }
-.main-wrapper main ._card:nth-child(3) {
+body main ._card:nth-child(3) {
   grid-area: card-3;
   border-top: solid 3px var(--orange);
 }
-.main-wrapper main ._card:nth-child(4) {
+body main ._card:nth-child(4) {
   grid-area: card-4;
   border-top: solid 3px var(--blue);
 }
-.main-wrapper footer {
+@media (min-width: 768px) {
+  body main ._card:nth-child(4) {
+    align-self: center;
+  }
+}
+body main ._card ._card_img {
+  display: flex;
+  justify-content: end;
+  margin-top: 2.1rem;
+}
+body main ._card ._card_img img {
+  width: 23.5%;
+}
+body footer {
   grid-area: footer;
+}
+body footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+body footer .attribution a {
+  color: hsl(228deg, 45%, 44%);
 }/*# sourceMappingURL=main.css.map */
