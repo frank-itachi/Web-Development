@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: hsl(257deg, 40%, 49%);
+  background-color: hsl(257, 40%, 49%);
   background-image: url("../images/bg-mobile.svg");
   background-position: top;
   background-repeat: no-repeat;
@@ -165,7 +165,7 @@ main #content-sec p {
 }
 main #content-sec a {
   font-size: 14px;
-  color: hsl(257deg, 40%, 49%);
+  color: hsl(257, 40%, 49%);
   margin-top: 2%;
   margin-bottom: 18%;
   padding: 2.88% 25%;
@@ -190,7 +190,7 @@ main #content-sec a {
   }
 }
 main #content-sec a:hover {
-  background-color: hsl(300deg, 69%, 71%);
+  background-color: hsl(300, 69%, 71%);
   color: #fff;
 }
 
@@ -223,8 +223,8 @@ footer a span {
   display: none;
 }
 footer a:hover {
-  border: 1px solid hsl(300deg, 69%, 71%);
-  color: hsl(300deg, 69%, 71%);
+  border: 1px solid hsl(300, 69%, 71%);
+  color: hsl(300, 69%, 71%);
 }
 footer a:nth-child(1) {
   padding: 0.1rem 0.5rem;

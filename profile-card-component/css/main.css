@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --verydark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --ft-bold: 700;
+  --ft-regular: 400;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: var(--verydark-desaturated-blue);
+  font-weight: var(--ft-bold);
+}
+
+.profile-name span, p {
+  color: var(--dark-grayish-blue);
+}
+
+body {
+  background: url(../images/bg-pattern-top.svg) no-repeat, url(../images/bg-pattern-bottom.svg) no-repeat;
+  background-position: -50vw -25vh, 45vw 60vh;
+  background-size: 110%;
+  background-color: var(--dark-cyan);
+  font-family: "Kumbh Sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 576px) {
+  body {
+    background-position: -50vw -50vh, 45vw 60vh;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    background-position: -50vw -70vh, 40vw 50vh;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    background-position: -40vw -100vh, 40vw 50vh;
+    background-size: 95%;
+  }
+}
+body main {
+  width: clamp(330px, 85vw, 20% + 60px);
+  height: clamp(350px, 51.5vh, 30% + 100px);
+}
+body main .card {
+  text-align: center;
+  background: url(../images/bg-pattern-card.svg) top no-repeat;
+  box-shadow: 0px 10px 60px -22px #062528;
+  background-color: #fff;
+  border-radius: 0.8rem;
+}
+body main .card img {
+  border-radius: 5em;
+  border: 5px solid #fff;
+  margin-top: 5.15rem;
+  margin-bottom: 0.8rem;
+}
+body main .card .profile-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+body main .card .profile-name span {
+  font-size: 1.2rem;
+  font-weight: var(--ft-regular);
+}
+body main .card .country {
+  font-size: 0.9rem;
+  font-weight: var(--ft-regular);
+}
+body main .card .devider {
+  margin-top: 1.5rem;
+  border: 0;
+  border-top: 1px solid #e6e6e6;
+}
+body main .card ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 1.5rem 2rem 1.3rem 1rem;
+}
+body main .card ul li {
+  display: inline-block;
+}
+body main .card ul h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+body main .card ul p {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}/*# sourceMappingURL=main.css.map */

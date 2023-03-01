@@ -3,14 +3,14 @@ body h1, body h2 {
   margin: 0;
 }
 body p {
-  color: hsl(228deg, 12%, 48%);
+  color: hsl(228, 12%, 48%);
 }
 body .add-btn, body p {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
 }
 body main {
-  background-color: hsl(30deg, 38%, 92%);
+  background-color: hsl(30, 38%, 92%);
   display: grid;
   grid-template-rows: auto 0.1fr;
   grid-template-areas: "main-section" "footer";
@@ -45,7 +45,7 @@ body main #main-section {
   }
 }
 body main #main-section #main-card {
-  background-color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 15px;
   display: grid;
   grid-template-rows: auto auto;
@@ -151,5 +151,5 @@ body main footer .attribution {
   text-align: center;
 }
 body main footer .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  color: hsl(228, 45%, 44%);
 }/*# sourceMappingURL=main.css.map */
