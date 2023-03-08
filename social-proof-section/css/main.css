@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+/* CSS HELPER */
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GENERAL STYLING  */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  color: hsl(300, 43%, 22%);
+}
+
+body:before, body:after {
+  position: absolute;
+  content: "";
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+body:before {
+  background-image: url("../images/bg-pattern-top-mobile.svg");
+  background-position: left top;
+}
+@media (min-width: 768px) {
+  body:before {
+    background-image: url("../images/bg-pattern-top-desktop.svg");
+  }
+}
+body:after {
+  background-image: url("../images/bg-pattern-bottom-mobile.svg");
+  background-position: right bottom;
+  top: 50vh;
+}
+@media (min-width: 768px) {
+  body:after {
+    background-image: url("../images/bg-pattern-bottom-desktop.svg");
+    top: 0;
+  }
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 85%;
+  grid-template-rows: auto 0.1fr;
+  font-family: "League Spartan", sans-serif;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100vh;
+}
+@media (min-width: 576px) {
+  body {
+    grid-template-columns: 75%;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 95%;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    grid-template-columns: 77%;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  text-align: center;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) {
+  main {
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 0.86fr auto;
+    grid-template-areas: "hero review" "testimonials testimonials";
+    text-align: left;
+    row-gap: 3.5rem;
+  }
+}
+
+.hero {
+  padding: 3.5rem 0 0 0;
+}
+@media (min-width: 768px) {
+  .hero {
+    align-self: end;
+    grid-area: hero;
+    padding: 0;
+  }
+}
+.hero h1 {
+  font-size: 2.5rem;
+  line-height: 0.8;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: hsl(303, 10%, 53%);
+  letter-spacing: -0.3px;
+  font-weight: 400;
+}
+
+.review {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .review {
+    align-self: end;
+    grid-area: review;
+  }
+}
+@media (min-width: 1200px) {
+  .review {
+    padding-left: 6rem;
+  }
+}
+
+.review-item {
+  background-color: hsl(300, 24%, 96%);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .review-item {
+    flex-flow: row wrap;
+    align-items: center;
+    width: 85%;
+  }
+  .review-item:nth-child(1) {
+    align-self: flex-start;
+  }
+  .review-item:nth-child(2) {
+    align-self: center;
+  }
+  .review-item:nth-child(3) {
+    align-self: flex-end;
+  }
+  .review-item img {
+    margin-right: 0.2rem;
+  }
+}
+.review-item h2 {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.testimonials {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .testimonials {
+    grid-area: testimonials;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+.testimonial {
+  background-color: hsl(300, 43%, 22%);
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  padding: 2rem;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .testimonial {
+    flex: 0 1 30%;
+  }
+  .testimonial:nth-child(1) {
+    align-self: flex-start;
+  }
+  .testimonial:nth-child(2) {
+    align-self: center;
+  }
+  .testimonial:nth-child(3) {
+    align-self: flex-end;
+  }
+}
+
+.testimonial__header {
+  display: flex;
+}
+.testimonial__header .testimonial__img {
+  border-radius: 100%;
+  width: 15%;
+}
+
+.testimonial__user-info {
+  padding-left: 1.5rem;
+  align-self: center;
+}
+.testimonial__user-info h3, .testimonial__user-info p {
+  font-size: 1rem;
+}
+.testimonial__user-info h3 {
+  line-height: 1.5;
+}
+.testimonial__user-info p {
+  color: hsl(333, 80%, 67%);
+  font-weight: 400;
+}
+
+.testimonial__comment {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+  line-height: 1.3;
+}
+
+footer .attribution {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+footer .attribution a {
+  color: hsl(300, 43%, 22%);
+}/*# sourceMappingURL=main.css.map */
