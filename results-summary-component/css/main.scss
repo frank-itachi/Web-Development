@@ -1,0 +1,75 @@
+@use "sass:list";
+/* Main Variables */
+
+/* Primary Colors */
+$primary-colors: (
+    light-red: hsl(0, 100%, 67%),
+    lrangey-yellow: hsl(39, 100%, 56%),
+    green-teal: hsl(166, 100%, 37%),
+    cobalt-blue: hsl(234, 85%, 45%)
+);
+
+/* Gradient Colors */
+$gradient-colors: (
+    bg-light-slate: hsl(252, 100%, 67%),
+    bg-light-royal-blue: hsl(241, 81%, 54%),
+    c-violet-blue: hsla(256, 72%, 46%, 1),
+    c-persian-blue: hsla(241, 72%, 46%, 0)
+);
+
+/* Neutral Colors */
+$neutral-colors: (
+white: hsl(0, 0%, 100%),
+pale-blue: hsl(221, 100%, 96%),
+light-lavender: hsl(241, 100%, 89%),
+dark-gray-blue: hsl(224, 30%, 27%)
+);
+
+$f-weight: 500, 700, 800;
+
+@mixin articles-styles {
+    padding: 1.3rem 2.5rem 2.2rem;
+    border: 1px solid red;
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto .1fr;
+    grid-template-areas: 
+    "main" "footer";
+}
+
+.result {
+    text-align: center;
+    @include articles-styles;
+}
+
+.heading {
+    font-weight: list.nth($f-weight, 2);
+    font-size: 1.2rem;
+}
+
+.final-result {
+    margin-bottom: 2.7rem;
+
+    h1 {
+        font-size: 3.5rem;
+        margin: 3rem 0 0;
+        line-height: 1.2;
+    }
+}
+
+.feedback {
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+.summary {
+    @include articles-styles;
+}

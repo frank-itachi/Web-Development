@@ -1,0 +1,42 @@
+/* Main Variables */
+/* Primary Colors */
+/* Gradient Colors */
+/* Neutral Colors */
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 0.1fr;
+  grid-template-areas: "main" "footer";
+}
+
+.result {
+  text-align: center;
+  padding: 1.3rem 2.5rem 2.2rem;
+  border: 1px solid red;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.final-result {
+  margin-bottom: 2.7rem;
+}
+.final-result h1 {
+  font-size: 3.5rem;
+  margin: 3rem 0 0;
+  line-height: 1.2;
+}
+
+.feedback h2 {
+  font-size: 1.6rem;
+}
+
+.summary {
+  padding: 1.3rem 2.5rem 2.2rem;
+  border: 1px solid red;
+}/*# sourceMappingURL=main.css.map */
