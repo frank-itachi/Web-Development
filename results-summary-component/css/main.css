@@ -2,6 +2,7 @@
 /* Primary Colors */
 /* Gradient Colors */
 /* Neutral Colors */
+/* General Styles  */
 body {
   font-family: "Hanken Grotesk", sans-serif;
 }
@@ -12,14 +13,16 @@ body {
   grid-template-areas: "main" "footer";
 }
 
-.result {
-  text-align: center;
-  padding: 1.3rem 2.5rem 2.2rem;
-  border: 1px solid red;
+.heading {
+  font-weight: 800;
 }
 
-.heading {
-  font-weight: 700;
+.result {
+  padding: 1.3rem 2.5rem 2.2rem;
+  text-align: center;
+  background: linear-gradient(hsla(256, 72%, 46%, 0.6), hsla(241, 72%, 46%, 0.9));
+}
+.result .heading {
   font-size: 1.2rem;
 }
 
@@ -37,6 +40,105 @@ body {
 }
 
 .summary {
-  padding: 1.3rem 2.5rem 2.2rem;
-  border: 1px solid red;
+  padding: 1.3rem 2rem 2.2rem;
+}
+
+.summary .heading {
+  color: hsl(224, 30%, 27%);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.detail-list {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0;
+  gap: 1rem;
+  margin: 1rem 0 1.7rem;
+}
+.detail-list li {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 700;
+  color: hsl(224, 30%, 27%);
+}
+.detail-list li:nth-child(1) {
+  background-color: hsla(0, 100%, 67%, 0.1);
+  padding: 0.9rem 0.7rem;
+  border-radius: 0.5rem;
+}
+.detail-list li:nth-child(1) .icon {
+  color: hsl(0, 100%, 67%);
+}
+.detail-list li:nth-child(1) .icon::before {
+  content: url("../assets/images/icon-reaction.svg");
+  margin: auto 0.5rem auto 0;
+  position: relative;
+  top: 0.2rem;
+}
+.detail-list li:nth-child(2) {
+  background-color: hsla(39, 100%, 56%, 0.1);
+  padding: 0.9rem 0.7rem;
+  border-radius: 0.5rem;
+}
+.detail-list li:nth-child(2) .icon {
+  color: hsl(39, 100%, 56%);
+}
+.detail-list li:nth-child(2) .icon::before {
+  content: url("../assets/images/icon-memory.svg");
+  margin: auto 0.5rem auto 0;
+  position: relative;
+  top: 0.2rem;
+}
+.detail-list li:nth-child(3) {
+  background-color: hsla(166, 100%, 37%, 0.1);
+  padding: 0.9rem 0.7rem;
+  border-radius: 0.5rem;
+}
+.detail-list li:nth-child(3) .icon {
+  color: hsl(166, 100%, 37%);
+}
+.detail-list li:nth-child(3) .icon::before {
+  content: url("../assets/images/icon-verbal.svg");
+  margin: auto 0.5rem auto 0;
+  position: relative;
+  top: 0.2rem;
+}
+.detail-list li:nth-child(4) {
+  background-color: hsla(234, 85%, 45%, 0.1);
+  padding: 0.9rem 0.7rem;
+  border-radius: 0.5rem;
+}
+.detail-list li:nth-child(4) .icon {
+  color: hsl(234, 85%, 45%);
+}
+.detail-list li:nth-child(4) .icon::before {
+  content: url("../assets/images/icon-visual.svg");
+  margin: auto 0.5rem auto 0;
+  position: relative;
+  top: 0.2rem;
+}
+
+.score span {
+  color: #929fc4;
+}
+
+.summary-details button {
+  background-color: hsl(224, 30%, 27%);
+  border: none;
+  border-radius: 2rem;
+  color: hsl(0, 0%, 100%);
+  padding: 1rem;
+  width: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }/*# sourceMappingURL=main.css.map */

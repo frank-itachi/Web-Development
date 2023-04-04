@@ -2,20 +2,16 @@
 /* Main Variables */
 
 /* Primary Colors */
-$primary-colors: (
-    light-red: hsl(0, 100%, 67%),
-    lrangey-yellow: hsl(39, 100%, 56%),
-    green-teal: hsl(166, 100%, 37%),
-    cobalt-blue: hsl(234, 85%, 45%)
-);
+$light-red: 0 100% 67%;
+$ligiht-rangey-yellow: 39, 100%, 56%;
+$green-teal: 166, 100%, 37%;
+$cobalt-blue: 234, 85%, 45%;
 
 /* Gradient Colors */
-$gradient-colors: (
-    bg-light-slate: hsl(252, 100%, 67%),
-    bg-light-royal-blue: hsl(241, 81%, 54%),
-    c-violet-blue: hsla(256, 72%, 46%, 1),
-    c-persian-blue: hsla(241, 72%, 46%, 0)
-);
+$bg-light-slate: hsl(252, 100%, 67%);
+$bg-light-royal-blue: hsl(241, 81%, 4%);
+$c-violet-blue: hsla(256, 72%, 46%, .6);
+$c-persian-blue: hsla(241, 72%, 46%, .9);
 
 /* Neutral Colors */
 $neutral-colors: (
@@ -27,10 +23,24 @@ dark-gray-blue: hsl(224, 30%, 27%)
 
 $f-weight: 500, 700, 800;
 
-@mixin articles-styles {
-    padding: 1.3rem 2.5rem 2.2rem;
-    border: 1px solid red;
+
+@mixin  summary-detail-style($icon, $bg-color, $opacity: .1){
+
+    background-color: hsla(list.nth($bg-color, 1), list.nth($bg-color, 2), list.nth($bg-color, 3), $opacity);
+    padding: .9rem .7rem;
+    border-radius: .5rem;
+    .icon{
+        color: hsl($bg-color...);
+        &::before {
+            content: url('../assets/images/icon-#{$icon}.svg');  
+            margin: auto .5rem auto 0;
+            position: relative;
+            top: .2rem;
+        }
+    }
 }
+
+/* General Styles  */
 
 body {
     font-family: 'Hanken Grotesk', sans-serif;
@@ -43,19 +53,21 @@ body {
     "main" "footer";
 }
 
-.result {
-    text-align: center;
-    @include articles-styles;
+.heading {
+    font-weight: list.nth($f-weight, 3);
 }
 
-.heading {
-    font-weight: list.nth($f-weight, 2);
-    font-size: 1.2rem;
+.result {
+    padding: 1.3rem 2.5rem 2.2rem;
+    text-align: center;
+    background: linear-gradient($c-violet-blue, $c-persian-blue);
+    .heading {
+        font-size: 1.2rem;
+    }
 }
 
 .final-result {
     margin-bottom: 2.7rem;
-
     h1 {
         font-size: 3.5rem;
         margin: 3rem 0 0;
@@ -64,12 +76,74 @@ body {
 }
 
 .feedback {
-    
     h2 {
         font-size: 1.6rem;
     }
 }
 
 .summary {
-    @include articles-styles;
+    padding: 1.3rem 2rem 2.2rem;
+}
+
+.summary .heading {
+    color: map-get($neutral-colors, dark-gray-blue);
+    margin-top: .5rem;
+    font-size: 1.1rem;
+}
+
+.detail-list {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    gap: 1rem;
+    margin: 1rem 0 1.7rem;
+    
+    li {
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: list.nth($f-weight, 2);
+        color: map-get($neutral-colors, dark-gray-blue);
+
+        &:nth-child(1) {
+            @include summary-detail-style(reaction, $light-red);
+        }
+
+        &:nth-child(2) {
+            @include summary-detail-style(memory, $ligiht-rangey-yellow);
+        }
+
+        &:nth-child(3) {
+            @include summary-detail-style(verbal, $green-teal);
+        }
+
+        &:nth-child(4) {
+            @include summary-detail-style(visual, $cobalt-blue);
+        }
+    }
+}
+
+.score {
+    span {
+        color: lighten(map-get($neutral-colors, dark-gray-blue), 40);
+    }
+}
+
+.summary-details button{
+    background-color: map-get($neutral-colors, dark-gray-blue);
+    border: none;
+    border-radius: 2rem;
+    color: map-get($neutral-colors, white);
+    padding: 1rem;
+    width: 100%;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    a { 
+        color: hsl(228, 45%, 44%); 
+    }
 }
