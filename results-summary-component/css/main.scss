@@ -135,11 +135,19 @@ main {
     .heading {
         font-size: 1.2rem;
         color: map-get($neutral-colors, light-lavender);
+        @include md-vp(){
+            font-size: 1.6rem;
+        }
     }
     
     @include sm-vp(){
         border-radius: 2rem;
         flex-basis: 50%;
+    }
+
+    @include md-vp(){
+        flex-basis: 51%;
+        padding: 2.2rem 4.2rem 2.5rem;
     }
 }
 
@@ -149,15 +157,28 @@ main {
         font-size: 3.5rem;
         margin: 3rem 0 0;
         line-height: 1.2;
+        @include md-vp(){
+            font-size: 4.5rem;
+            margin: 5rem 0 0;
+            line-height: 1.1;
+        }
     }
     p {
         color: lighten(map-get($neutral-colors, dark-gray-blue), 40);
+    }
+    @include md-vp(){
+        margin-bottom: 4.4rem;
     }
 }
 
 .feedback {
     h2 {
         font-size: 1.6rem;
+        @include md-vp(){
+            font-size: 2.1rem;
+            font-weight: list.nth($f-weight, 2);
+            margin-bottom: 0.7rem;
+        }
     }
     p {
       color: map-get($neutral-colors, light-lavender);
@@ -169,6 +190,9 @@ main {
 
     @include sm-vp(){
         flex-basis: 50%;
+    }
+    @include md-vp(){
+        flex-basis: 48%;
     }
 }
 

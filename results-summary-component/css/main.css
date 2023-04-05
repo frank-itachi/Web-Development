@@ -46,10 +46,21 @@ h2, h1 {
   font-size: 1.2rem;
   color: hsl(241, 100%, 89%);
 }
+@media (min-width: 768px) {
+  .result .heading {
+    font-size: 1.6rem;
+  }
+}
 @media (min-width: 576px) {
   .result {
     border-radius: 2rem;
     flex-basis: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .result {
+    flex-basis: 51%;
+    padding: 2.2rem 4.2rem 2.5rem;
   }
 }
 
@@ -61,12 +72,31 @@ h2, h1 {
   margin: 3rem 0 0;
   line-height: 1.2;
 }
+@media (min-width: 768px) {
+  .final-result h1 {
+    font-size: 4.5rem;
+    margin: 5rem 0 0;
+    line-height: 1.1;
+  }
+}
 .final-result p {
   color: #929fc4;
+}
+@media (min-width: 768px) {
+  .final-result {
+    margin-bottom: 4.4rem;
+  }
 }
 
 .feedback h2 {
   font-size: 1.6rem;
+}
+@media (min-width: 768px) {
+  .feedback h2 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
 }
 .feedback p {
   color: hsl(241, 100%, 89%);
@@ -78,6 +108,11 @@ h2, h1 {
 @media (min-width: 576px) {
   .summary {
     flex-basis: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .summary {
+    flex-basis: 48%;
   }
 }
 
