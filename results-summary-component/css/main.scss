@@ -1,19 +1,18 @@
 @use "sass:list";
-/* Main Variables */
 
-/* Primary Colors */
+// Primary Colors 
 $light-red: 0 100% 67%;
 $ligiht-rangey-yellow: 39, 100%, 56%;
 $green-teal: 166, 100%, 37%;
 $cobalt-blue: 234, 85%, 45%;
 
-/* Gradient Colors */
+// Gradient Colors 
 $bg-light-slate: hsl(252, 100%, 67%);
 $bg-light-royal-blue: hsl(241, 81%, 4%);
-$c-violet-blue: hsla(256, 72%, 46%, .6);
+$c-violet-blue: hsla(256, 72%, 46%, .8);
 $c-persian-blue: hsla(241, 72%, 46%, .9);
 
-/* Neutral Colors */
+// Neutral Colors 
 $neutral-colors: (
 white: hsl(0, 0%, 100%),
 pale-blue: hsl(221, 100%, 96%),
@@ -23,12 +22,24 @@ dark-gray-blue: hsl(224, 30%, 27%)
 
 $f-weight: 500, 700, 800;
 
+@mixin corners-style($pos-1, $bpos-1, $bpos-2, $color){
+    content: '';
+    position: absolute;
+    width: 5%;
+    height: 20%;
+    #{$pos-1}: 0;
+    border-#{$bpos-1}: 1px solid hsla(list.nth($color, 1), list.nth($color, 2), list.nth($color, 3), .2);
+    border-#{$bpos-2}: 1px solid hsla(list.nth($color, 1), list.nth($color, 2), list.nth($color, 3), .2);
+    border-#{$bpos-1}-#{$bpos-2}-radius: .3rem;
+}
+
 
 @mixin  summary-detail-style($icon, $bg-color, $opacity: .1){
-
     background-color: hsla(list.nth($bg-color, 1), list.nth($bg-color, 2), list.nth($bg-color, 3), $opacity);
     padding: .9rem .7rem;
     border-radius: .5rem;
+    position: relative;
+
     .icon{
         color: hsl($bg-color...);
         &::before {
@@ -38,6 +49,40 @@ $f-weight: 500, 700, 800;
             top: .2rem;
         }
     }
+
+    &::before {
+        @include corners-style(top, top, left, $bg-color);
+        left: 0;
+    }
+
+    &::after {
+        @include corners-style(top, top, right, $bg-color);
+        right: 0;
+    }
+
+    .score {
+        &::before {
+            @include corners-style(bottom, bottom, left, $bg-color);
+            left: 0;
+        }
+    
+        &::after {
+            @include corners-style(bottom, bottom, right, $bg-color);
+            right: 0;
+        }   
+    }
+}
+
+@mixin sm-vp(){
+    @media (min-width: 576px){
+        @content
+    }
+}
+
+@mixin md-vp(){
+    @media (min-width: 768px){
+        @content
+    }
 }
 
 /* General Styles  */
@@ -46,23 +91,55 @@ body {
     font-family: 'Hanken Grotesk', sans-serif;
 }
 
+h2, h1 {
+    color: map-get($neutral-colors, white);
+    font-weight: list.nth($f-weight, 3);
+}
+
 .wrapper {
     display: grid;
     grid-template-rows: auto .1fr;
     grid-template-areas: 
     "main" "footer";
+    min-height: 100vh;
+}
+
+main {
+    @include sm-vp(){
+        box-shadow: .4rem .8rem 3rem 1rem map-get($neutral-colors, pale-blue);
+        border-radius: 2rem;
+        // grid proterties
+        align-self: center;
+        justify-self: center;
+        // flex properties
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    @include md-vp(){
+        max-width: 50vw;
+    }
 }
 
 .heading {
-    font-weight: list.nth($f-weight, 3);
+    font-weight: list.nth($f-weight, 2);
 }
 
 .result {
     padding: 1.3rem 2.5rem 2.2rem;
     text-align: center;
-    background: linear-gradient($c-violet-blue, $c-persian-blue);
+    background: 
+        //linear-gradient($c-violet-blue, $c-persian-blue 60%),
+        radial-gradient($c-persian-blue 10px, $c-violet-blue);
+    border-radius: 0 0 2rem 2rem;
     .heading {
         font-size: 1.2rem;
+        color: map-get($neutral-colors, light-lavender);
+    }
+    
+    @include sm-vp(){
+        border-radius: 2rem;
+        flex-basis: 50%;
     }
 }
 
@@ -73,16 +150,26 @@ body {
         margin: 3rem 0 0;
         line-height: 1.2;
     }
+    p {
+        color: lighten(map-get($neutral-colors, dark-gray-blue), 40);
+    }
 }
 
 .feedback {
     h2 {
         font-size: 1.6rem;
     }
+    p {
+      color: map-get($neutral-colors, light-lavender);
+    }
 }
 
 .summary {
     padding: 1.3rem 2rem 2.2rem;
+
+    @include sm-vp(){
+        flex-basis: 50%;
+    }
 }
 
 .summary .heading {
