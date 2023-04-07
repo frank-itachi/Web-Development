@@ -1,18 +1,15 @@
-/* General Styles  */
 body {
   font-family: "Hanken Grotesk", sans-serif;
-}
-
-h2, h1 {
-  color: hsl(0, 0%, 100%);
-  font-weight: 800;
-}
-
-.wrapper {
   display: grid;
   grid-template-rows: auto 0.1fr;
   grid-template-areas: "main" "footer";
   min-height: 100vh;
+}
+
+h2,
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-weight: 800;
 }
 
 @media (min-width: 576px) {
@@ -22,11 +19,12 @@ h2, h1 {
     align-self: center;
     justify-self: center;
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   main {
     max-width: 50vw;
   }
@@ -39,8 +37,19 @@ h2, h1 {
 .result {
   padding: 1.3rem 2.5rem 2.2rem;
   text-align: center;
-  background: radial-gradient(hsla(241, 72%, 46%, 0.9) 10px, hsla(256, 72%, 46%, 0.8));
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
   border-radius: 0 0 2rem 2rem;
+  position: relative;
+}
+.result::before {
+  border-radius: 100%;
+  background-image: linear-gradient(180deg, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+  content: "";
+  position: absolute;
+  width: 49%;
+  height: 33%;
+  top: 23%;
+  left: 25%;
 }
 .result .heading {
   font-size: 1.2rem;
@@ -66,6 +75,7 @@ h2, h1 {
 
 .final-result {
   margin-bottom: 2.7rem;
+  position: relative;
 }
 .final-result h1 {
   font-size: 3.5rem;
@@ -113,6 +123,7 @@ h2, h1 {
 @media (min-width: 768px) {
   .summary {
     flex-basis: 48%;
+    padding: 2.2rem 2rem 2.5rem;
   }
 }
 
@@ -121,28 +132,47 @@ h2, h1 {
   margin-top: 0.5rem;
   font-size: 1.1rem;
 }
+@media (min-width: 768px) {
+  .summary .heading {
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
+}
 
 .detail-list {
-  display: flex;
-  flex-flow: column wrap;
   padding: 0;
   gap: 1rem;
   margin: 1rem 0 1.7rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+@media (min-width: 768px) {
+  .detail-list {
+    margin: 2.8rem 0;
+  }
 }
 .detail-list li {
-  list-style: none;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 100%;
-  font-weight: 700;
+  border-radius: 0.5rem;
   color: hsl(224, 30%, 27%);
+  font-weight: 700;
+  list-style: none;
+  width: 100%;
+  padding: 0.9rem 0.7rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .detail-list li {
+    padding: 0.7rem 0.7rem;
+  }
 }
 .detail-list li:nth-child(1) {
-  background-color: hsla(0, 100%, 67%, 0.1);
-  padding: 0.9rem 0.7rem;
-  border-radius: 0.5rem;
-  position: relative;
+  background-color: hsla(0, 100%, 67%, 0.03);
 }
 .detail-list li:nth-child(1) .icon {
   color: hsl(0, 100%, 67%);
@@ -159,8 +189,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(0, 100%, 67%, 0.2);
-  border-left: 1px solid hsla(0, 100%, 67%, 0.2);
+  border-top: 1px solid hsla(0, 100%, 67%, 0.1);
+  border-left: 1px solid hsla(0, 100%, 67%, 0.1);
   border-top-left-radius: 0.3rem;
   left: 0;
 }
@@ -170,8 +200,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(0, 100%, 67%, 0.2);
-  border-right: 1px solid hsla(0, 100%, 67%, 0.2);
+  border-top: 1px solid hsla(0, 100%, 67%, 0.1);
+  border-right: 1px solid hsla(0, 100%, 67%, 0.1);
   border-top-right-radius: 0.3rem;
   right: 0;
 }
@@ -181,8 +211,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(0, 100%, 67%, 0.2);
-  border-left: 1px solid hsla(0, 100%, 67%, 0.2);
+  border-bottom: 1px solid hsla(0, 100%, 67%, 0.1);
+  border-left: 1px solid hsla(0, 100%, 67%, 0.1);
   border-bottom-left-radius: 0.3rem;
   left: 0;
 }
@@ -192,16 +222,13 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(0, 100%, 67%, 0.2);
-  border-right: 1px solid hsla(0, 100%, 67%, 0.2);
+  border-bottom: 1px solid hsla(0, 100%, 67%, 0.1);
+  border-right: 1px solid hsla(0, 100%, 67%, 0.1);
   border-bottom-right-radius: 0.3rem;
   right: 0;
 }
 .detail-list li:nth-child(2) {
-  background-color: hsla(39, 100%, 56%, 0.1);
-  padding: 0.9rem 0.7rem;
-  border-radius: 0.5rem;
-  position: relative;
+  background-color: hsla(39, 100%, 56%, 0.03);
 }
 .detail-list li:nth-child(2) .icon {
   color: hsl(39, 100%, 56%);
@@ -218,8 +245,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(39, 100%, 56%, 0.2);
-  border-left: 1px solid hsla(39, 100%, 56%, 0.2);
+  border-top: 1px solid hsla(39, 100%, 56%, 0.1);
+  border-left: 1px solid hsla(39, 100%, 56%, 0.1);
   border-top-left-radius: 0.3rem;
   left: 0;
 }
@@ -229,8 +256,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(39, 100%, 56%, 0.2);
-  border-right: 1px solid hsla(39, 100%, 56%, 0.2);
+  border-top: 1px solid hsla(39, 100%, 56%, 0.1);
+  border-right: 1px solid hsla(39, 100%, 56%, 0.1);
   border-top-right-radius: 0.3rem;
   right: 0;
 }
@@ -240,8 +267,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(39, 100%, 56%, 0.2);
-  border-left: 1px solid hsla(39, 100%, 56%, 0.2);
+  border-bottom: 1px solid hsla(39, 100%, 56%, 0.1);
+  border-left: 1px solid hsla(39, 100%, 56%, 0.1);
   border-bottom-left-radius: 0.3rem;
   left: 0;
 }
@@ -251,16 +278,13 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(39, 100%, 56%, 0.2);
-  border-right: 1px solid hsla(39, 100%, 56%, 0.2);
+  border-bottom: 1px solid hsla(39, 100%, 56%, 0.1);
+  border-right: 1px solid hsla(39, 100%, 56%, 0.1);
   border-bottom-right-radius: 0.3rem;
   right: 0;
 }
 .detail-list li:nth-child(3) {
-  background-color: hsla(166, 100%, 37%, 0.1);
-  padding: 0.9rem 0.7rem;
-  border-radius: 0.5rem;
-  position: relative;
+  background-color: hsla(166, 100%, 37%, 0.03);
 }
 .detail-list li:nth-child(3) .icon {
   color: hsl(166, 100%, 37%);
@@ -277,8 +301,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(166, 100%, 37%, 0.2);
-  border-left: 1px solid hsla(166, 100%, 37%, 0.2);
+  border-top: 1px solid hsla(166, 100%, 37%, 0.1);
+  border-left: 1px solid hsla(166, 100%, 37%, 0.1);
   border-top-left-radius: 0.3rem;
   left: 0;
 }
@@ -288,8 +312,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(166, 100%, 37%, 0.2);
-  border-right: 1px solid hsla(166, 100%, 37%, 0.2);
+  border-top: 1px solid hsla(166, 100%, 37%, 0.1);
+  border-right: 1px solid hsla(166, 100%, 37%, 0.1);
   border-top-right-radius: 0.3rem;
   right: 0;
 }
@@ -299,8 +323,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(166, 100%, 37%, 0.2);
-  border-left: 1px solid hsla(166, 100%, 37%, 0.2);
+  border-bottom: 1px solid hsla(166, 100%, 37%, 0.1);
+  border-left: 1px solid hsla(166, 100%, 37%, 0.1);
   border-bottom-left-radius: 0.3rem;
   left: 0;
 }
@@ -310,16 +334,13 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(166, 100%, 37%, 0.2);
-  border-right: 1px solid hsla(166, 100%, 37%, 0.2);
+  border-bottom: 1px solid hsla(166, 100%, 37%, 0.1);
+  border-right: 1px solid hsla(166, 100%, 37%, 0.1);
   border-bottom-right-radius: 0.3rem;
   right: 0;
 }
 .detail-list li:nth-child(4) {
-  background-color: hsla(234, 85%, 45%, 0.1);
-  padding: 0.9rem 0.7rem;
-  border-radius: 0.5rem;
-  position: relative;
+  background-color: hsla(234, 85%, 45%, 0.03);
 }
 .detail-list li:nth-child(4) .icon {
   color: hsl(234, 85%, 45%);
@@ -336,8 +357,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(234, 85%, 45%, 0.2);
-  border-left: 1px solid hsla(234, 85%, 45%, 0.2);
+  border-top: 1px solid hsla(234, 85%, 45%, 0.1);
+  border-left: 1px solid hsla(234, 85%, 45%, 0.1);
   border-top-left-radius: 0.3rem;
   left: 0;
 }
@@ -347,8 +368,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   top: 0;
-  border-top: 1px solid hsla(234, 85%, 45%, 0.2);
-  border-right: 1px solid hsla(234, 85%, 45%, 0.2);
+  border-top: 1px solid hsla(234, 85%, 45%, 0.1);
+  border-right: 1px solid hsla(234, 85%, 45%, 0.1);
   border-top-right-radius: 0.3rem;
   right: 0;
 }
@@ -358,8 +379,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(234, 85%, 45%, 0.2);
-  border-left: 1px solid hsla(234, 85%, 45%, 0.2);
+  border-bottom: 1px solid hsla(234, 85%, 45%, 0.1);
+  border-left: 1px solid hsla(234, 85%, 45%, 0.1);
   border-bottom-left-radius: 0.3rem;
   left: 0;
 }
@@ -369,8 +390,8 @@ h2, h1 {
   width: 5%;
   height: 20%;
   bottom: 0;
-  border-bottom: 1px solid hsla(234, 85%, 45%, 0.2);
-  border-right: 1px solid hsla(234, 85%, 45%, 0.2);
+  border-bottom: 1px solid hsla(234, 85%, 45%, 0.1);
+  border-right: 1px solid hsla(234, 85%, 45%, 0.1);
   border-bottom-right-radius: 0.3rem;
   right: 0;
 }
@@ -386,6 +407,15 @@ h2, h1 {
   color: hsl(0, 0%, 100%);
   padding: 1rem;
   width: 100%;
+}
+.summary-details button:hover {
+  background: linear-gradient(hsla(256, 72%, 46%, 0.8) 10%, hsl(241, 72%, 46%));
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .summary-details button {
+    padding: 0.8rem;
+  }
 }
 
 .attribution {
