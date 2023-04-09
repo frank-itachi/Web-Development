@@ -1,107 +1,7 @@
 @use "sass:list";
-
-// Primary Colors
-$light-red: 0 100% 67%;
-$ligiht-rangey-yellow: 39, 100%, 56%;
-$green-teal: 166, 100%, 37%;
-$cobalt-blue: 234, 85%, 45%;
-
-// Gradient Colors
-$bg-light-slate: hsl(252deg, 100%, 67%);
-$bg-light-royal-blue: hsl(241deg, 81%, 54%);
-$c-violet-blue: 256, 72%, 46%;
-$c-persian-blue: 241, 72%, 46%;
-
-// Neutral Colors
-$neutral-colors: (
-  white: hsl(0, 0%, 100%),
-  pale-blue: hsl(221, 100%, 96%),
-  light-lavender: hsl(241, 100%, 89%),
-  dark-gray-blue: hsl(224, 30%, 27%),
-);
-
-$f-weight: 500, 700, 800;
-
-@function get_hsla_color($color, $opacity) {
-  @return hsla(
-    list.nth($color, 1),
-    list.nth($color, 2),
-    list.nth($color, 3),
-    $opacity
-  );
-}
-
-@mixin corners-style($pos-1, $bpos-1, $bpos-2, $color) {
-  content: "";
-  position: absolute;
-  width: 5%;
-  height: 20%;
-  #{$pos-1}: 0;
-  border-#{$bpos-1}: 1px solid get_hsla_color($color, 0.1);
-  border-#{$bpos-2}: 1px solid get_hsla_color($color, 0.1);
-  border-#{$bpos-1}-#{$bpos-2}-radius: 0.3rem;
-}
-
-@mixin summary-detail-style($icon, $bg-color, $opacity: 0.03) {
-  background-color: get_hsla_color($bg-color, $opacity);
-
-  .icon {
-    color: hsl($bg-color...);
-    &::before {
-      content: url("../assets/images/icon-#{$icon}.svg");
-      margin: auto 0.5rem auto 0;
-      position: relative;
-      top: 0.2rem;
-    }
-  }
-
-  &::before {
-    @include corners-style(top, top, left, $bg-color);
-    left: 0;
-  }
-
-  &::after {
-    @include corners-style(top, top, right, $bg-color);
-    right: 0;
-  }
-
-  .score {
-    &::before {
-      @include corners-style(bottom, bottom, left, $bg-color);
-      left: 0;
-    }
-
-    &::after {
-      @include corners-style(bottom, bottom, right, $bg-color);
-      right: 0;
-    }
-  }
-}
-
-@mixin flex-layout($direction, $wrap, $justify: flex-start) {
-  display: flex;
-  flex-direction: $direction;
-  flex-wrap: $wrap;
-  justify-content: $justify;
-}
-
-@mixin sm-vp() {
-  @media (min-width: 576px) {
-    @content;
-  }
-}
-
-@mixin md-vp() {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin lg-vp() {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
+@import "helpers/reset";
+@import "helpers/variables";
+@import "helpers/mixins";
 
 body {
   font-family: "Hanken Grotesk", sans-serif;
@@ -258,20 +158,13 @@ main {
       padding: 0.7rem 0.7rem;
     }
 
-    &:nth-child(1) {
-      @include summary-detail-style(reaction, $light-red);
-    }
-
-    &:nth-child(2) {
-      @include summary-detail-style(memory, $ligiht-rangey-yellow);
-    }
-
-    &:nth-child(3) {
-      @include summary-detail-style(verbal, $green-teal);
-    }
-
-    &:nth-child(4) {
-      @include summary-detail-style(visual, $cobalt-blue);
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        @include summary-detail-style(
+          list.nth($icons-list, $i),
+          list.nth($primary-colors, $i)
+        );
+      }
     }
   }
 }

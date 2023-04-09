@@ -1,0 +1,80 @@
+@function get_hsla_color($color, $opacity) {
+    @return hsla(
+      list.nth($color, 1),
+      list.nth($color, 2),
+      list.nth($color, 3),
+      $opacity
+    );
+  }
+  
+  @mixin corners-style($pos-1, $bpos-1, $bpos-2, $color) {
+    content: "";
+    position: absolute;
+    width: 5%;
+    height: 20%;
+    #{$pos-1}: 0;
+    border-#{$bpos-1}: 1px solid get_hsla_color($color, 0.1);
+    border-#{$bpos-2}: 1px solid get_hsla_color($color, 0.1);
+    border-#{$bpos-1}-#{$bpos-2}-radius: 0.3rem;
+  }
+  
+  @mixin summary-detail-style($icon, $bg-color, $opacity: 0.03) {
+    background-color: get_hsla_color($bg-color, $opacity);
+  
+    .icon {
+      color: hsl($bg-color...);
+      &::before {
+        content: url("../assets/images/icon-#{$icon}.svg");
+        margin: auto 0.5rem auto 0;
+        position: relative;
+        top: 0.2rem;
+      }
+    }
+  
+    &::before {
+      @include corners-style(top, top, left, $bg-color);
+      left: 0;
+    }
+  
+    &::after {
+      @include corners-style(top, top, right, $bg-color);
+      right: 0;
+    }
+  
+    .score {
+      &::before {
+        @include corners-style(bottom, bottom, left, $bg-color);
+        left: 0;
+      }
+  
+      &::after {
+        @include corners-style(bottom, bottom, right, $bg-color);
+        right: 0;
+      }
+    }
+  }
+  
+  @mixin flex-layout($direction, $wrap, $justify: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+  }
+  
+  @mixin sm-vp() {
+    @media (min-width: 576px) {
+      @content;
+    }
+  }
+  
+  @mixin md-vp() {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin lg-vp() {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }

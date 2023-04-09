@@ -1,0 +1,30 @@
+// Primary Colors
+$light-red: 0 100% 67%;
+$ligiht-rangey-yellow: 39, 100%, 56%;
+$green-teal: 166, 100%, 37%;
+$cobalt-blue: 234, 85%, 45%;
+
+$primary-colors: (
+    (0 100% 67%),
+    (39, 100%, 56%),
+    (166, 100%, 37%),
+    (234, 85%, 45%)
+);
+
+$icons-list: (reaction, memory, verbal, vision);
+
+// Gradient Colors
+$bg-light-slate: hsl(252deg, 100%, 67%);
+$bg-light-royal-blue: hsl(241deg, 81%, 54%);
+$c-violet-blue: 256, 72%, 46%;
+$c-persian-blue: 241, 72%, 46%;
+
+// Neutral Colors
+$neutral-colors: (
+  white: hsl(0, 0%, 100%),
+  pale-blue: hsl(221, 100%, 96%),
+  light-lavender: hsl(241, 100%, 89%),
+  dark-gray-blue: hsl(224, 30%, 27%),
+);
+
+$f-weight: 500, 700, 800;
